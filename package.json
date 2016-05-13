@@ -1,0 +1,22 @@
+{
+  "name": "env-var-jsonizer",
+  "version": "0.0.1",
+  "description": "takes a bash shell export command and turns it into a json object",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "envarize": "bin/index.js"
+  },
+  "author": "John Ryan",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "coffee-script": "^1.10.0",
+    "commander": "^2.9.0",
+    "docopt": "^0.6.2"
+  }
+}

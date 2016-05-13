@@ -1,0 +1,8 @@
+export ENV_VAR_A="HELLO"
+# i am a comment skip me
+export "ENV_VAR_B"="BBB BBB BBB"
+export 'ENV_VAR_C"=' CCCCnCCC CCC'
+some_var="dont count me"
+export ENV_VAR_D="DDDDDDDDD"
+export ENV_VAR_E="EEEE"
+export 'ENV_VAR_F'="FFFFFF"
