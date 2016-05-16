@@ -5,6 +5,7 @@ Usage:
   envarizer <file>
 
 Options:
+  -o --output          the output format [default=json]
   -h --help            show this help message and exit
   --version            show version and exit
 """
@@ -13,7 +14,7 @@ Options:
 version = require('../package.json').version
 parameters = docopt(doc, version: version)
 byline = require 'byline'
-envarizer = require './envarizer2.coffee'
+envarizer = require './envarizer.coffee'
 
 #envarizer.parseFile(process.argv[2], '')
 

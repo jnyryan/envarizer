@@ -1,5 +1,5 @@
 {
-  "name": "env-var-jsonizer",
+  "name": "envarizer",
   "version": "0.0.1",
   "description": "takes a bash shell export command and turns it into a json object",
   "directories": {
@@ -9,7 +9,7 @@
     "test": "mocha --reporter progress --compilers coffee:coffee-script/register"
   },
   "bin": {
-    "envarize": "bin/index.js"
+    "envarize": "bin/app.js"
   },
   "author": "John Ryan",
   "license": "ISC",
