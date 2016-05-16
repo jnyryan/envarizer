@@ -1,4 +1,5 @@
 # envarizer
+![build-status](https://api.travis-ci.org/jnyryan/envarizer.svg)
 
 takes a bash shell export command and turns it into a json object
 
