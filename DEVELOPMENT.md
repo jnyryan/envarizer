@@ -7,7 +7,7 @@ Useful information when developing this
 to run locally after cloning the repository
 
 ```
-git clone
+git clone https://github.com/jnyryan/envarizer.git
 cd envarizer
 npm install
 npm link
@@ -25,4 +25,5 @@ npm test
 
 ```
 npm install --production
+npm login
 ```

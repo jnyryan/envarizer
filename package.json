@@ -1,6 +1,6 @@
 {
   "name": "envarizer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "takes a bash shell export command and turns it into a json object",
   "directories": {
     "test": "test"
