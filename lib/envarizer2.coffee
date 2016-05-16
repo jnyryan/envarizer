@@ -4,45 +4,40 @@
 
 ###    
 class Envarizer 
-  fs = require('fs')
-  readline = require('readline')
   Promise = require('bluebird')
 
-  constructor: () ->
-    #console.log("cstr")
-    @output = [];
+  constructor: (@format = 'json') ->
+    @matchedExpressions = [];
+    @formattedOutput = [];
   
   ###
-  
+  Loop all data and format it as required
   ###
-  parseFile : (file, option) -> 
-    #console.log("working...", file)
-    lineReader = readline.createInterface({
-      input: fs.createReadStream(file)
-    })
-
-    lineReader
-    	.on 'line', (line) => 
-        @parseExpression(line);
-      .on 'close', ()=> 
-        return @formatOutput()
+  parseFile : (fileData) => 
+    for line in fileData
+      @parseExpression(line);
+    switch @format
+      when 'array'
+        @formattedOutput = JSON.stringify @matchedExpressions
+      when 'json'
+       for item in @matchedExpressions
+        @formattedOutput[item.key] = item.value
 
   ###
-  
+  Parse the line looking for lines that could be env-var export statements
   ###
   parseExpression : (text) => 
     pattern = /^export ([A-Za-z0-9_]+)={1}(\"{0,1}|\'{0,1})(.*)(\"{0,1}|\'{0,1})$/
     rePattern = new RegExp(pattern);
     matches = text.match(rePattern);
     if(matches != null || matches is !undefined)
-        @output.push {key: matches[1], value : matches[3] }
+      @matchedExpressions.push {key: matches[1], value : matches[3] }
    
-   ###
-   
-   ###
-   formatOutput: =>
-    for o in @output
-      console.log o 
-
+  ###
+  Print what we have formatted to stdout
+  ###
+  print: =>
+    console.log @formattedOutput
+    
  module.exports = new Envarizer()
  
