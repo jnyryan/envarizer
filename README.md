@@ -4,9 +4,13 @@ takes a bash shell export command and turns it into a json object
 
 Why you ask? I found myself doing it more than once by hand.
 
+## Prerequisite
+
+This is a Node.js package so needs [node.js](https://nodejs.org/en/) runtime.
+
 ## Installation
 
-This is a Node.js package so need [node.js](https://nodejs.org/en/) runtime to be used
+This package is published on [npmjs.com](https://www.npmjs.com/package/envarizer)
 
 ```
 npm install envarizer

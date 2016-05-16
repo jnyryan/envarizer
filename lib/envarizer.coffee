@@ -24,10 +24,17 @@ class Envarizer
         @formattedOutput[item.key] = item.value
 
   ###
-  Parse the line looking for lines that could be env-var export statements
+  Parse the line looking for lines that are environment variable export statements.
+  
+  begins with export
+  then string up to =
+  then optional quotes
+  then any string
+  then optional quotes
+  
   ###
   parseExpression : (text) => 
-    pattern = /^export ([A-Za-z0-9_]+)={1}(\"{0,1}|\'{0,1})(.*)(\"{0,1}|\'{0,1})(;*)$/
+    pattern = /^export ([A-Za-z0-9_]+)={1}(\"{0,1}|\'{0,1})(.*)(\"{0,1}|\'{0,1})$/
     rePattern = new RegExp(pattern);
     matches = text.match(rePattern);
     if(matches != null || matches is !undefined)

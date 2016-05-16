@@ -20,10 +20,15 @@ envarizer ./test/test-file.txt
 npm test
 ```
 
+## CI Testing
+
+```
+npm test
+```
 
 ## Packaging
 
 ```
-npm install --production
 npm login
+npm publish
 ```
