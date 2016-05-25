@@ -15,12 +15,7 @@ version = require('../package.json').version
 parameters = docopt(doc, version: version)
 byline = require 'byline'
 envarizer = require './envarizer.coffee'
-
-#envarizer.parseFile(process.argv[2], '')
-
-
 fs = require('fs')
-byline = require('byline')
 
 stream = fs.createReadStream(parameters['<file>']);
 stream = byline.createStream(stream);

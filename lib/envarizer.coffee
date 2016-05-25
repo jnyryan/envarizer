@@ -1,11 +1,9 @@
 #!/usr/bin/env coffee
 ###
-
-
+Use RegEx to pull out the environment variable from inputted text
 ###    
 class Envarizer 
-  Promise = require('bluebird')
-
+  
   constructor: (@format = 'json') ->
     @matchedExpressions = [];
     @formattedOutput = [];
@@ -34,10 +32,11 @@ class Envarizer
   
   ###
   parseExpression : (text) => 
-    pattern = /^export ([A-Za-z0-9_]+)={1}(\"{0,1}|\'{0,1})(.*)(\"{0,1}|\'{0,1})$/
+    pattern = /^export ([A-Za-z0-9_]+)={1}(\"{0,1}|\'{0,1})(.*)(\"{0,1}|\'{0,1})/
     rePattern = new RegExp(pattern);
     matches = text.match(rePattern);
     if(matches != null || matches is !undefined)
+      console.log "-->", matches
       @matchedExpressions.push {key: matches[1], value : matches[3] }
    
   ###

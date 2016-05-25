@@ -20,5 +20,21 @@ npm install envarizer
 ## Usage
 
 ```
-envarizer ./test/test-file.txt
+envarizer ./test/test-file.sh
+```
+
+example input
+
+``` bash
+#!/usr/bin/env bash
+export ENV_VAR_A=/var/log
+export ENV_VAR_B=a string
+export ENV_VAR_C=john.smyth@example.com
+```
+
+example output
+``` javascript
+[ ENV_VAR_A: '/var/log',
+  ENV_VAR_B: 'a string',
+  ENV_VAR_C: 'john.smyth@example.com' ]
 ```
