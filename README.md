@@ -1,7 +1,8 @@
 # envarizer
 ![build-status](https://api.travis-ci.org/jnyryan/envarizer.svg)
+[![Known Vulnerabilities](https://snyk.io/test/npm/envarizer/badge.svg)](https://snyk.io/test/npm/envarizer)
 
-takes a bash shell export command and turns it into a json object
+Takes a bash shell export command and turns it into a json object
 
 Why you ask? I found myself doing it more than once by hand.
 

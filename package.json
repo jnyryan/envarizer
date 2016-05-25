@@ -1,12 +1,12 @@
 {
   "name": "envarizer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "takes a bash shell export command and turns it into a json object",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --reporter progress --compilers coffee:coffee-script/register"
+    "test": "snyk test && mocha --reporter progress --compilers coffee:coffee-script/register"
   },
   "bin": {
     "envarize": "bin/app.js"
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "snyk": "^1.14.3"
   }
 }
